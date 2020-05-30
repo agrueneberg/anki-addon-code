@@ -7,7 +7,8 @@ def insert_code(editor):
     editor.web.eval("wrap('<code>', '</code>');")
 
 def add_code_button(buttons, editor):
-    buttons.append(
+    buttons.insert(
+        len(buttons) - 1, # add before hamburger menu
         editor.addButton(
             os.path.join(ADDON_PATH, "code.png"), # icon,
             "code", # cmd,
